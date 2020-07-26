@@ -1,1 +1,1 @@
-# CosmoSample
+This is a SQL SERVER database and scripts.
