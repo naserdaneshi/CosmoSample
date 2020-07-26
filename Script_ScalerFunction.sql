@@ -9,7 +9,11 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-
+/*
+Author: Naser Daneshi - 1386/05/26
+THis function counts the number of @CHR in @String
+It can be replace with Len(@String)- Len(Replace(@String, @CHR,''))/Len(@CHR)
+*/
 CREATE FUNCTION [dbo].[CountOfChar]( @String nvarchar(1000) , @CHR nvarchar(1)) returns int AS
 BEGIN
 	Declare @CNT int ,  @I INT , @L INT
@@ -27,8 +31,6 @@ BEGIN
 END
 
 
-
-
 GO
 
 /****** Object:  UserDefinedFunction [dbo].[CountOfLines]    Script Date: 7/26/2020 2:51:49 AM ******/
@@ -39,6 +41,11 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -----------------------
+/*
+Author: Naser Daneshi - 1386/05/26
+THis function counts the number of new feed(new line) in @S
+It can be replace with Len(@String)- Len(Replace(@String, Char(10),'')) 
+*/
 create function [dbo].[CountOfLines](@S varchar(1000)) returns int as
 begin
 declare @I int,@L int,@k int, @S1 varchar(1000), @S2 varchar(1000)
